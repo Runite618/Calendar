@@ -22,11 +22,12 @@ namespace Calendar.Controllers
         }
 
         [HttpPost]
-        public ActionResult Date(string _event)
+        public ActionResult Date(Date model)
         {
-            _event = Request.Form["_event"];
+            string _event = model.Event;
+            DateTime releaseDate = model.ReleaseDate;
 
-            return View();
+            return View(_event, releaseDate);
         }
 
         public ActionResult About()

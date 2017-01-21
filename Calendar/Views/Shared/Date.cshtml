@@ -2,6 +2,8 @@
     ViewBag.Title = "Home Page";
 }
 
+@model Calendar.Models.Date
+
 <!DOCTYPE html>
 
 <html>
@@ -37,9 +39,13 @@
 </head>
 <body>
     <div>
-        @model Calendar.Models.Date
-        @Html.TextBox("Release Date", "", new {  @class = "datefield", type = "date"})
-        <input id="_event" type="submit" name="_event" />
+        @Html.LabelFor(Model => Model.ReleaseDate)
+        @Html.TextBoxFor(Model => Model.ReleaseDate, "Release Date", new {  @class = "datefield", type = "date"})
+
+        @Html.LabelFor(Model => Model.Event)
+        @Html.TextBoxFor(Model => Model.Event)
+
+        <input type="button" id="submitId" value="submit" />
     </div>
 </body>
 </html>
