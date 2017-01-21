@@ -10,5 +10,7 @@ namespace Calendar.Models
     {
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
+
+        public string Event { get; set; }
     }
 }
