@@ -9,9 +9,9 @@ namespace Calendar.Models
     public class Date
     {
         [DataType(DataType.Date)]
+        [Key]
         public DateTime ReleaseDate { get; set; }
 
-        [Key]
         public string Event { get; set; }
     }
 }
