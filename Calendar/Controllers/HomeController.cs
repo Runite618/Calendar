@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Calendar.Models;
 
 namespace Calendar.Controllers
 {
@@ -11,6 +12,12 @@ namespace Calendar.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult Date()
+        {
+            var model = new Date();
+            return View(model);
         }
 
         public ActionResult About()
