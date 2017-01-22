@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Calendar.Models;
 using Calendar;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Calendar.Controllers
 {
@@ -12,9 +14,33 @@ namespace Calendar.Controllers
     {
         private EventContext _db = new EventContext();
 
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            string connectionString = ConfigurationManager.ConnectionStrings["connWebOrdering"].ConnectionString;
+            SqlConnection con = new SqlConnection(connectionString);
+
+            string selectSql = "SELECT * FROM Dates";
+            SqlCommand com = new SqlCommand(selectSql, con);
+
+            var model = new Date();
+
+            try
+            {
+                con.Open();
+                using (SqlDataReader read = com.ExecuteReader())
+                {
+                    while(read.Read())
+                    {
+                        model.Event = (read["Event"].ToString());
+                    }
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+            return View(model);
         }
 
         public Guid generateId()
@@ -33,7 +59,7 @@ namespace Calendar.Controllers
         }
 
         [HttpPost, ActionName("Date")]
-        public ActionResult DatePost([Bind(Include="ID, ReleaseDate, Event")] Date model)
+        public ActionResult DatePost([Bind(Include = "ID, ReleaseDate, Event")] Date model)
         {
             _db.Entry(model).State = System.Data.Entity.EntityState.Added;
             _db.SaveChanges();

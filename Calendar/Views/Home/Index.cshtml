@@ -2,5 +2,23 @@
     ViewBag.Title = "Home Page";
 }
 
+@model Calendar.Models.Date
 
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(Model => Model.Id)
+    @Html.AntiForgeryToken()
+    <!DOCTYPE html>
 
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Date</title>
+    </head>
+    <body>
+        <div>
+            @Html.TextBoxFor(Model => Model.Event)
+        </div>
+    </body>
+</html>
+}
