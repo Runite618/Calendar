@@ -33,6 +33,7 @@ namespace Calendar.Controllers
                     while(read.Read())
                     {
                         model.Event = (read["Event"].ToString());
+                        model._Date = Convert.ToDateTime(read["_Date"]);
                     }
                 }
             }
