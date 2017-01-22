@@ -4,30 +4,40 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Calendar.Models;
+using Calendar;
 
 namespace Calendar.Controllers
 {
     public class HomeController : Controller
     {
+        private EventContext db = new EventContext();
+
         public ActionResult Index()
         {
             return View();
         }
 
+        public Guid generateId()
+        {
+            return Guid.NewGuid();
+        }
+
         [HttpGet]
         public ActionResult Date()
         {
-            var model = new Date();
+            var model = new Date()
+            {
+                Id = generateId()
+            };
             return View(model);
         }
 
-        [HttpPost]
-        public ActionResult Date(Date model)
+        [HttpPost, ActionName("Date")]
+        public ActionResult DatePost([Bind(Include="ID, ReleaseDate, Event")] Date model)
         {
-            string _event = model.Event;
-            DateTime releaseDate = model.ReleaseDate;
-
-            return View(_event, releaseDate);
+            db.Entry(model).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         public ActionResult About()

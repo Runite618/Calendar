@@ -212,6 +212,26 @@
     <Compile Include="Migrations\201701211847579_Changed_key_from_event_to_date.Designer.cs">
       <DependentUpon>201701211847579_Changed_key_from_event_to_date.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701220811568_AddedEventKeyAndDateKey.cs" />
+    <Compile Include="Migrations\201701220811568_AddedEventKeyAndDateKey.Designer.cs">
+      <DependentUpon>201701220811568_AddedEventKeyAndDateKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701221435544_JustOneId.cs" />
+    <Compile Include="Migrations\201701221435544_JustOneId.Designer.cs">
+      <DependentUpon>201701221435544_JustOneId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701221520324_ChangedIdToGuid.cs" />
+    <Compile Include="Migrations\201701221520324_ChangedIdToGuid.Designer.cs">
+      <DependentUpon>201701221520324_ChangedIdToGuid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701221619193_changedDateTimeToDate.cs" />
+    <Compile Include="Migrations\201701221619193_changedDateTimeToDate.Designer.cs">
+      <DependentUpon>201701221619193_changedDateTimeToDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701221625002_addedRowVers.cs" />
+    <Compile Include="Migrations\201701221625002_addedRowVers.Designer.cs">
+      <DependentUpon>201701221625002_addedRowVers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Date.cs" />
@@ -324,6 +344,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\Date.cshtml" />
+    <Content Include="Views\Shared\DatePost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -341,6 +362,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701211847579_Changed_key_from_event_to_date.resx">
       <DependentUpon>201701211847579_Changed_key_from_event_to_date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701220811568_AddedEventKeyAndDateKey.resx">
+      <DependentUpon>201701220811568_AddedEventKeyAndDateKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701221435544_JustOneId.resx">
+      <DependentUpon>201701221435544_JustOneId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701221520324_ChangedIdToGuid.resx">
+      <DependentUpon>201701221520324_ChangedIdToGuid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701221619193_changedDateTimeToDate.resx">
+      <DependentUpon>201701221619193_changedDateTimeToDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701221625002_addedRowVers.resx">
+      <DependentUpon>201701221625002_addedRowVers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

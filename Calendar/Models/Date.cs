@@ -8,8 +8,10 @@ namespace Calendar.Models
 {
     public class Date
     {
-        [DataType(DataType.Date)]
         [Key]
+        public Guid Id { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
 
         public string Event { get; set; }

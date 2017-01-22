@@ -1,15 +1,11 @@
-﻿@{
+﻿@*@{
     ViewBag.Title = "Home Page";
 }
 
 @model Calendar.Models.Date
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Date", "Home", FormMethod.Post))
 {
-    @Html.HiddenFor(Model => Model.Id)
-    <!DOCTYPE html>
-
-    <html>
     <head>
         <meta name="viewport" content="width=device-width" />
         <title>Date</title>
@@ -44,11 +40,11 @@
         <div>
             @Html.LabelFor(Model => Model.ReleaseDate)
             @Html.TextBoxFor(Model => Model.ReleaseDate, "Release Date", new { @class = "datefield", type = "date" })
+            @Html.HiddenFor(Model => Model.ReleaseDate)
 
             @Html.LabelFor(Model => Model.Event)
-            @Html.TextBoxFor(Model => Model.Event)
-            <input type="submit" id="DatePost" name="DatePost" value="Save" />
+            @Html.HiddenFor(Model => Model.Event)
+            <input type="button" id="Model" name="Model" value="submit" />
         </div>
     </body>
-</html>
-}
+}*@

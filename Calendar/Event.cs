@@ -3,8 +3,8 @@ namespace Calendar
     using System;
     using System.Data.Entity;
     using System.Linq;
-
-    public class Event : DbContext
+    
+    public class EventContext : DbContext
     {
         // Your context has been configured to use a 'Event' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
@@ -12,7 +12,7 @@ namespace Calendar
         // 
         // If you wish to target a different database and/or database provider, modify the 'Event' 
         // connection string in the application configuration file.
-        public Event()
+        public EventContext()
             : base("name=Event")
         {
         }
@@ -21,6 +21,7 @@ namespace Calendar
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
+
         public DbSet<Models.Date> Dates { get; set; }
     }
 
