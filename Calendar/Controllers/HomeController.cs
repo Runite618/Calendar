@@ -10,7 +10,7 @@ namespace Calendar.Controllers
 {
     public class HomeController : Controller
     {
-        private EventContext db = new EventContext();
+        private EventContext _db = new EventContext();
 
         public ActionResult Index()
         {
@@ -35,8 +35,8 @@ namespace Calendar.Controllers
         [HttpPost, ActionName("Date")]
         public ActionResult DatePost([Bind(Include="ID, ReleaseDate, Event")] Date model)
         {
-            db.Entry(model).State = System.Data.Entity.EntityState.Modified;
-            db.SaveChanges();
+            _db.Entry(model).State = System.Data.Entity.EntityState.Added;
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 

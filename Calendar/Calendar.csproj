@@ -224,14 +224,6 @@
     <Compile Include="Migrations\201701221520324_ChangedIdToGuid.Designer.cs">
       <DependentUpon>201701221520324_ChangedIdToGuid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701221619193_changedDateTimeToDate.cs" />
-    <Compile Include="Migrations\201701221619193_changedDateTimeToDate.Designer.cs">
-      <DependentUpon>201701221619193_changedDateTimeToDate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701221625002_addedRowVers.cs" />
-    <Compile Include="Migrations\201701221625002_addedRowVers.Designer.cs">
-      <DependentUpon>201701221625002_addedRowVers.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Date.cs" />
@@ -371,12 +363,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701221520324_ChangedIdToGuid.resx">
       <DependentUpon>201701221520324_ChangedIdToGuid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701221619193_changedDateTimeToDate.resx">
-      <DependentUpon>201701221619193_changedDateTimeToDate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701221625002_addedRowVers.resx">
-      <DependentUpon>201701221625002_addedRowVers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
