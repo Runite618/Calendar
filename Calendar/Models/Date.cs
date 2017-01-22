@@ -12,7 +12,7 @@ namespace Calendar.Models
         public Guid Id { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime ReleaseDate { get; set; }
+        public DateTime _Date { get; set; }
 
         public string Event { get; set; }
     }

@@ -59,7 +59,7 @@ namespace Calendar.Controllers
         }
 
         [HttpPost, ActionName("Date")]
-        public ActionResult DatePost([Bind(Include = "ID, ReleaseDate, Event")] Date model)
+        public ActionResult DatePost([Bind(Include = "ID, _Date, Event")] Date model)
         {
             _db.Entry(model).State = System.Data.Entity.EntityState.Added;
             _db.SaveChanges();
